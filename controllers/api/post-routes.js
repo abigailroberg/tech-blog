@@ -115,4 +115,20 @@ router.get('/:user_id', (req, res) => {
     })
 })
 
+// create new post
+router.post('/', (req, res) => {
+    Post.create({
+        user_id: req.body.user_id,
+        title: req.body.title,
+        text_content: req.body.text_content
+    })
+    .then(dbPostData => {
+        res.json(dbPostData)
+    })
+    .catch(err => {
+        console.log(err)
+        res.status(500).json(err)
+    })
+})
+
 module.exports = router
