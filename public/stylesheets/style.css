@@ -22,7 +22,8 @@ header h1 {
 
 .post {
     width: 75%;
-    display: flex;
+    list-style-type: none;
+    margin-bottom: 10px;
 }
 
 .post-title {
