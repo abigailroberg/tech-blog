@@ -1,7 +1,49 @@
-body, html {
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    font-family: sans-serif;
-    color: #333;
+body {
+    background-color: #daf5e5;
+}
+
+header {
+    background-color: #606362;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    background-color: #daf5e5;
+    color: #606362;
+    margin-left: 10%;
+    padding: 2px;
+    border-style: ridge;
+    border-color: #606362;
+}
+
+.post {
+    width: 75%;
+    display: flex;
+}
+
+.post-title {
+    background-color: #606362;
+    color: white;
+    padding: 1%;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+.posted {
+    font-weight: normal;
+    font-size: 75%;
+    color: black;
+    text-align: right;
+    vertical-align: middle;
+}
+
+.border {
+    border-color: #606362;
+    border-width: 2px;
+    border-style: solid;
+    padding: 1%;
 }
