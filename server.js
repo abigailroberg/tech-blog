@@ -24,7 +24,7 @@ const sess = {
 app.use(session(sess))
 
 // get helper function(s)
-const helpers = require('./utils/helpers')
+const helpers = require('./utils/helpers');
 
 // create handlebars with access to helpers
 const hbs = exphbs.create({ helpers })
@@ -39,8 +39,6 @@ const controllers = require('./controllers')
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static(path.join(__dirname, 'public')))
-
-
 
 // turn on controllers
 app.use(controllers)
