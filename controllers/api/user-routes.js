@@ -71,6 +71,7 @@ router.post('/', (req, res) => {
 
 // login post route
 router.post('/login', (req, res) => {
+    console.log('login api running')
     User.findOne({
         where: {
             username: req.body.username
@@ -78,7 +79,7 @@ router.post('/login', (req, res) => {
     })
     .then(dbUserData => {
         if (!dbUserData) {
-            res.status(400).json({ message: 'No user with that email address!' })
+            res.status(400).json({ message: 'No user with that username found!' })
             return
         }
 
@@ -88,6 +89,8 @@ router.post('/login', (req, res) => {
             res.status(404).json({ message: 'Incorrect password!' })
             return
         }
+
+        console.log('logging in!')
 
         // start session
         req.session.save(() => {

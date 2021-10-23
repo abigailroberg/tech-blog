@@ -15,8 +15,11 @@
                 <a href="/">The Tech Blog</a>
             </h1>
             <nav>
-                <button id='logout'>logout</button>
-                <a href='/login'>login</a>
+                {{#if loggedIn}}
+                <a id='logout' href='/logout'>logout</button>
+                {{else}}
+                <a id='login' href='/login'>login</a>
+                {{/if}}
             </nav>
         </header>
         <main>
@@ -27,7 +30,9 @@
         </footer>
     </div>
     
-    <script src="/javascript/logout.js"></script>
+    {{#if loggedIn}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
 </body>
 
 </html>
