@@ -2,9 +2,13 @@
 async function signupFormHandler(event) {
     event.preventDefault()
 
+    console.log('sign up form click submit')
+
     // get username and password from entry
     const username = document.querySelector('#username-signup').value.trim()
     const password = document.querySelector('#password-signup').value.trim()
+
+    console.log(`username: ${username} password: ${password}`)
 
     // create new account with username and password
     if(username && password) {
