@@ -37,5 +37,7 @@ function loginForm(event) {
     
 }
 
+ console.log('signup js running')
+
 document.querySelector('#signup-form').addEventListener('submit', signupFormHandler)
 document.querySelector('#login').addEventListener('click', loginForm)
