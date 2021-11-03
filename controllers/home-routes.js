@@ -30,7 +30,8 @@ router.get('/', (req, res) => {
         const posts = dbPostData.map(post => post.get({ plain: true }))
         res.render('homepage', {
             posts,
-            loggedIn: req.session.loggedIn
+            loggedIn: req.session.loggedIn,
+            id: req.session.user_id
         })
     })
     .catch(err => {
@@ -96,7 +97,8 @@ router.get('/post/:id', (req, res) => {
 
         res.render('post', {
             post,
-            loggedIn: req.session.loggedIn
+            loggedIn: req.session.loggedIn,
+            id: req.session.user_id
         })
     })
     .catch(err => {

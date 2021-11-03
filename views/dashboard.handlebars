@@ -13,8 +13,6 @@
         <button id='create-post'>Create new post!</button>
     </form>
 </div>
-<script src="/js/new-post.js"></script>
-{{/if}}
 
 <h1>Your Posts:</h3>
 <ol>
@@ -34,3 +32,7 @@
 </ol>
 
 <script src="/js/new-post.js"></script>
+{{else}}
+<h3>Please log in or sign up to see your posts & create new ones!</h3>
+
+{{/if}}
