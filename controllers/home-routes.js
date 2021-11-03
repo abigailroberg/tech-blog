@@ -58,7 +58,7 @@ router.get('/signup', (req, res) => {
 })
 
 // single post display
-router.get('/:id', (req, res) => {
+router.get('/post/:id', (req, res) => {
     // get single post including comments
     Post.findOne({
         where: {
