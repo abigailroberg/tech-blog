@@ -60,8 +60,9 @@ router.post('/', (req, res) => {
             req.session.user_id = dbUserData.id,
             req.session.username = dbUserData.username,
             req.session.loggedIn = true
+
+            res.json(dbUserData)
         })
-        res.json(dbUserData)
     })
     .catch(err => {
         console.log(err)
@@ -78,11 +79,13 @@ router.post('/login', (req, res) => {
         }
     })
     .then(dbUserData => {
+        // check username
         if (!dbUserData) {
             res.status(400).json({ message: 'No user with that username found!' })
             return
         }
 
+        // check password
         const validPw = dbUserData.checkPassword(req.body.password)
 
         if(!validPw) {
@@ -90,15 +93,14 @@ router.post('/login', (req, res) => {
             return
         }
 
-        console.log('logging in!')
-
         // start session
         req.session.save(() => {
             req.session.user_id = dbUserData.user_id,
             req.session.username = dbUserData.username,
             req.session.loggedIn = true
-        })
-        res.json({ user: dbUserData, message: 'You are now logged in' })
+
+            res.json({ user: dbUserData, message: 'You are now logged in' })
+        }) 
     })
 })
 

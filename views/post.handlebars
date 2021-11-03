@@ -1,5 +1,25 @@
+<ol>
+    <li class='post'>
+        <article>
+            <div class='post-title'>
+                {{post.title}}
+                <div class='posted'>Posted by {{post.user.username}} on {{format_date post.created_at}}</div>
+            </div>
+            <div class='border'>
+                {{post.text_content}}
+            </div>
+        </article>
+    </li>
+</ol>
+{{#if loggedIn}}
 <div>
-    <h1>This is to view a single post!</h1>
-    <p>Post title: {{post.title}}</p>
-    <p>Post content: {{post.text_content}}</p>
+    <form id='comment-form'>
+        <div>
+            <label for='new-comment'></label>
+            <input type="text" id="new-comment" />
+        </div>
+        <button id='comment'>Add your comment!</button>
+    </form>
 </div>
+<script src="/js/comment.js"></script>
+{{/if}}
