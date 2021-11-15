@@ -1,5 +1,3 @@
-console.log('script tag working')
-
 async function editPost(event) {
     event.preventDefault()
 
@@ -24,4 +22,20 @@ async function editPost(event) {
     }
 }
 
+async function deletePost(event) {
+    event.preventDefault()
+
+    const id = window.location.toString().split('/')[
+        window.location.toString().split('/').length - 1]
+    
+    const response = await fetch(`/api/posts/${id}`, {
+        method: 'DELETE'
+    })
+
+    if(response.ok) {
+        document.location.replace('/')
+    }
+}
+
 document.querySelector('#edit-post-form').addEventListener('submit', editPost)
+document.querySelector('#delete-post-btn').addEventListener('click', deletePost)
