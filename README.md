@@ -11,7 +11,7 @@ Requires 9 NPM packages: bcrypt, connect-session-sequelize, dotenv, express, exp
 ## Usage
 The command to run the server is npm start. Once you start the server, you can use the app at localhost:3001 in your browser. You'll need to create users and posts in your local database.
 ## Deployed Application
-The app is deployed live here: 
+The app is deployed live here: https://blooming-harbor-06364.herokuapp.com/
 ## Contributing
 Developed by Abigail Roberg with guidance from The Coding Boot Camp at The University of Texas at Austin
 ## Questions
